@@ -1,0 +1,18 @@
+<div id="divTop">
+	<h1 id="BlogTitle"><a href="http://www.blog.com/index.php/admin" target="_blank"><img src="/static/index/images/LOGO.gif" alt="hao的个人博客" onMouseover="shake(this,'onmouseout')" /></a></h1>
+	<!-- <h3 id="BlogSubTitle">www.blogw.com</h3> -->
+</div>
+<div id="divNavBar">
+	<ul>
+	<li><a href="{:url('Index/index')}">首页</a></li>
+	{volist name="navres" id="vo"}
+	<li><a href="
+		{if condition="$vo.type eq 0"}
+		{:url('lst/index',array('cateid'=>$vo.id))}
+		{else /}
+		{:url('Guest/index',array('cateid'=>$vo.id))}
+		{/if}
+		">{$vo.catename}</a></li>
+	{/volist}
+	</ul>
+</div>
